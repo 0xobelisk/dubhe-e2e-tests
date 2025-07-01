@@ -7,6 +7,9 @@
   module example::deploy_hook {
 
   use dubhe::dapp_service::DappHub;
+  use example::resource0;
 
-  public(package) fun run(_dapp_hub: &mut DappHub, _ctx: &mut TxContext) {}
+  public(package) fun run(_dapp_hub: &mut DappHub, _ctx: &mut TxContext) {
+    resource0::set(_dapp_hub, 0);
+  }
 }
